@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Lista</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+    <%- include("../partials/header") %>
+        <main>
+            <h1 class="title">Criar Nova Lista</h1>
+            <section>
+                <form action="/registerNewList" method="post">
+                    <div class="rows-form">
+                        <label for="nameList">Dê um nome a essa lista:</label>
+                        <input type="text" name="nameList" id="nameList">
+                    </div>
+                    <div class="rows-form-button">
+                        <button type="submit" class="button-create">Criar</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+</body>
+
+</html>

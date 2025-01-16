@@ -1,0 +1,199 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-color: rgb(63, 48, 48);
+    color: #fff;
+}
+
+#initial-card{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: red;
+    width: 65vw;
+    padding: 1rem;
+    background-color: rgb(44, 33, 33);
+    border-radius: 0.5rem;
+}
+
+#card-title{
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid #444444;
+    padding-bottom: 1rem;
+}
+
+#card-body{
+    font-weight: lighter;
+    font-size: 18px;
+    text-align: center;
+    width: 90%;
+}
+
+.button-toGo{
+    background-color: #1a0be9;
+    border: none;
+    width: 120px;
+    height: 25px;
+    border-radius: 0.2rem;
+    color: #fff;
+}
+
+header{
+    width: 100%;
+    height: 2vh;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #444444;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-link{
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: 94vh;
+}
+h1{
+    padding: 1rem 0rem 0 1rem;
+}
+
+section{
+    padding: 1rem 0rem 1rem 1rem;
+    background-color: rgb(44, 33, 33);
+}
+form{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.rows-form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 1rem;
+}
+
+input{
+    background-color: #000;
+    border: none;
+    width: 100%;
+    height: 30px;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 16px;
+}
+
+textarea{
+    font-size: 16px;
+    background-color: #000;
+    border: none;
+    width: 95%;
+    height: 30px;
+    color: #fff;
+    border-radius: 0.5rem;
+}
+
+label{
+    font-size: 22px;
+}
+
+.rows-form-button{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+.all-tasks{
+    display: flex;
+    align-items: end;
+    gap: 10rem;
+    padding-right: 1rem;
+}
+.all-new-tasks{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding-right: 5rem;
+}
+
+.description > p{
+    font-size: 20px;
+}
+
+h1{
+    font-size: 46px;
+}
+
+h3{
+    font-size: 26px;
+}
+
+.button-create{
+    background-color: #1a0be9;
+    border: none;
+    width: 60px;
+    height: 30px;
+    border-radius: 0.2rem;
+    color: #fff;
+}
+.button-exclude{
+    background-color: red;
+    border: none;
+    width: 60px;
+    height: 25px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 0.3rem;
+}
+.btn-finish-task{
+    background-color: green;
+    border: none;
+    width: 60px;
+    height: 25px;
+    border-radius: 0.3rem;
+    color: #fff;
+    font-size: 15px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+
+
+
+

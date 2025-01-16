@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/style.css">
+    <title>
+        Tarefas
+    </title>
+</head>
+
+<body>
+    <%- include("../partials/header") %>
+        <main>
+            <h1>
+                Lista: <%= lists.nameList %>
+            </h1>
+            <div class="rows-form">
+                <form action="/addNewTask/<%=lists.id %>" method="post">
+                    <input type="text" name="newTask" id="newTask">
+                    <button type="submit" class="button-create">Adicionar Tarefa</button>
+                </form>
+            </div>
+            <h1>Tarefas</h1>
+            <% if (lists.tasks=='' ) { %>
+                <h1>Nenhuma Tarefa registrada.</h1>
+                <% } else { %>
+                    <% lists.tasks.forEach(task=> { %>
+                        <section class="all-new-tasks">
+                            <h3>
+                                <%= task.taskName %>
+                            </h3>
+                            <form action="" method="post">
+                                <button type="submit" class="btn-finish-task">Concluir</button>
+                            </form>
+                        </section>
+                        <% }); %>
+
+                            <% } %>
+        </main>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefas</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+    <%- include("../partials/header") %>
+        <main>
+            <h1>Listas de Tarefas</h1>
+            <% allLists.forEach(list=> { %>
+                <section class="all-tasks">
+                    <a href="/list/<%= list.id %>">
+                        <h3>
+                            <%= list.nameList %>
+                        </h3>
+                    </a>
+                    <form action="/list/delete/<%= list.id %>" method="post">
+                        <button type="submit" class="button-exclude">Excluir</button>
+                    </form>
+                </section>
+                <% }) %>
+        </main>
+</body>
+
+</html>
