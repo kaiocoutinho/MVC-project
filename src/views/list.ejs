@@ -31,9 +31,16 @@
                             <h3>
                                 <%= task.taskName %>
                             </h3>
-                            <form action="" method="post">
+                            <%if (!task.completed) { %>
+                                <form action="/finishTask/<%=lists.nameList%>/<%=task.id%>" method="post">
                                 <button type="submit" class="btn-finish-task">Concluir</button>
                             </form>
+                           <% } else { %>
+                                <form action="/deleteTask/<%=lists.nameList%>/<%=task.id%>" method="post">
+                                    <button type="submit" class="btn-inComplete-task">Desfazer</button>
+                                </form>
+                           <% } %>
+                         
                         </section>
                         <% }); %>
 

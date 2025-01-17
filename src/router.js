@@ -10,5 +10,7 @@ router.get("/list/:id", adminController.getList);
 
 router.post("/registerNewList", adminController.registerNewList);
 router.post("/addNewTask/:id", adminController.registerTask);
+router.post("/finishTask/:nameList/:id", adminController.finishTask)
+router.post("/deleteTask/:nameList/:id", adminController.inCompleteTask)
 
 module.exports = router;
