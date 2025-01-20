@@ -15,20 +15,38 @@ const adminController = {
   },
   // POST /registerNewList
   registerNewList: (req, res) => {
-    const { nameList } = req.body;
-    const newTask = taskModel.newList(nameList);
+    // Validação
+    if(req.body.nameList === ''){
+      console.error("Erro, Você precisa dar um nome a essa Lista.");
+      res.redirect("/newList")
+    } else {
+      const { nameList } = req.body;
+      const newTask = taskModel.newList(nameList);
 
-    taskModel.saveList(newTask);
+      taskModel.saveList(newTask);
 
-    return res.redirect("/allTasks");
+      return res.redirect("/newList")
+    }
+    
   },
   // GET /getList/:id
+  // Pegar alguma lista especifica pelo id
   getList: (req, res) => {
     const id = req.params.id;
-    let lists = taskModel.getList(id);
+    let lists = taskModel.getListById(id);
     return res.render("list", { lists });
   },
+
+  // Deletar uma Lista
+  deleteList: (req, res) => {
+    const idList = req.params.id
+
+    taskModel.excludeListModel(idList)
+    
+    return res.redirect("/allTasks")
+  },
   //POST /addNewTask/:id
+  // Adicionar uma tarefa em alguma Lista
   registerTask: (req, res) => {
     const id = req.params.id;
     const { newTask } = req.body;
@@ -37,19 +55,25 @@ const adminController = {
 
     return res.redirect(`/list/${id}`);
   },
+
+  // Botão para finalizar alguma tarefa
   finishTask:(req, res) => {
     const taskId = req.params.id;
     const nameList = req.params.nameList
+    const listShow = taskModel.getListByName(nameList)
     taskModel.finishTaskModel(nameList, taskId);
     
-    return res.redirect("/allTasks")
+    return res.redirect(`/list/${listShow.id}`)
   },
+
+  // Botão para desfinalizar a tarefa
   inCompleteTask: (req,res) => {
     const taskId = req.params.id;
     const nameList = req.params.nameList
+    const listShow = taskModel.getListByName(nameList)
     taskModel.inCompleteTaskModel(nameList, taskId)
 
-    return res.redirect("/allTasks")
+    return res.redirect(`/list/${listShow.id}`)
   }
 
 };

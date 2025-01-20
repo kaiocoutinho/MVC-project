@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/style.css">
+    <script src="/assets/addNewTask.js" defer></script>
     <title>
         Tarefas
     </title>
@@ -19,7 +20,7 @@
             <div class="rows-form">
                 <form action="/addNewTask/<%=lists.id %>" method="post">
                     <input type="text" name="newTask" id="newTask">
-                    <button type="submit" class="button-create">Adicionar Tarefa</button>
+                    <button type="submit" class="button-create" id="buttonAddTask">Adicionar Tarefa</button>
                 </form>
             </div>
             <h1>Tarefas</h1>

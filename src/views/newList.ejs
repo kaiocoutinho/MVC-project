@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nova Lista</title>
     <link rel="stylesheet" href="/assets/style.css">
+    <script src="/assets/addNewList.js" defer></script>
 </head>
 
 <body>
@@ -13,13 +14,13 @@
         <main>
             <h1 class="title">Criar Nova Lista</h1>
             <section>
-                <form action="/registerNewList" method="post">
+                <form action="/registerNewList" method="post" id="form">
                     <div class="rows-form">
                         <label for="nameList">Dê um nome a essa lista:</label>
                         <input type="text" name="nameList" id="nameList">
                     </div>
                     <div class="rows-form-button">
-                        <button type="submit" class="button-create">Criar</button>
+                        <button type="submit" class="button-create" id="buttonSubmitList">Criar</button>
                     </div>
                 </form>
             </section>

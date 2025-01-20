@@ -12,18 +12,23 @@
     <%- include("../partials/header") %>
         <main>
             <h1>Listas de Tarefas</h1>
-            <% allLists.forEach(list=> { %>
-                <section class="all-tasks">
-                    <a href="/list/<%= list.id %>">
-                        <h3>
-                            <%= list.nameList %>
-                        </h3>
-                    </a>
-                    <form action="/list/delete/<%= list.id %>" method="post">
-                        <button type="submit" class="button-exclude">Excluir</button>
-                    </form>
-                </section>
-                <% }) %>
+            
+            <%if (allLists.length == 0) { %>
+                <h1>Nenhuma Lista Existente.</h1>
+            <%} else { %>
+                <% allLists.forEach(list=> { %>
+                    <section class="all-tasks">
+                        <a href="/list/<%= list.id %>">
+                            <h3>
+                                <%= list.nameList %>
+                            </h3>
+                        </a>
+                        <form action="/list/delete/<%= list.id %>" method="post">
+                            <button type="submit" class="button-exclude">Excluir</button>
+                        </form>
+                    </section>
+                    <% }) %>
+           <% } %>
         </main>
 </body>
 
